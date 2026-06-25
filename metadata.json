@@ -1,0 +1,8 @@
+{
+  "name": "Megapari Predictor Pro",
+  "description": "A premium educational crash game prediction and analytics tool customized for MEGAPARI platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
