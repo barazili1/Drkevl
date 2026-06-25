@@ -184,14 +184,14 @@ export const AppleGrid: React.FC<GridProps> = ({
  
                        {(isVisible && showResult) ? (
                           <MotionDiv
-                            initial={{ opacity: 0, scale: 0 }}
+                            initial={{ opacity: 0, scale: 0.85 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{
-                              type: "spring",
-                              stiffness: 240,
-                              damping: 18,
-                              delay: rowIndex * 0.03 + colIndex * 0.015
-                            }}
+                               type: "tween",
+                               ease: "easeOut",
+                               duration: 0.2,
+                               delay: rowIndex * 0.02 + colIndex * 0.01
+                             }}
                             className="w-full h-full flex items-center justify-center relative rounded-full overflow-hidden"
                            >
                             {isPath && (
@@ -258,6 +258,11 @@ export const AppleGrid: React.FC<GridProps> = ({
               </MotionDiv>
             )}
         </AnimatePresence>
+        {/* Hidden preloader for instant cached image rendering */}
+        <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden" aria-hidden="true">
+          <img src="https://video11.rf.gd/apple.png" alt="" />
+          <img src="https://video11.rf.gd/poi.png" alt="" />
+        </div>
     </div>
   );
 };

@@ -269,16 +269,16 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onComplete, lang, t, platfo
   };
 
   const stepTexts = {
-    step1_tag: isArabic ? "شريان الاتصال" : "LINK 01",
-    step1_title: isArabic ? "تحميل العميل الرسمي" : "OBTAIN ROYAL APP CLIENT",
-    step1_desc: isArabic ? "انقر أدناه للحصول على تطبيق Megapari الرسمي للبدء في ربط وتزامن مصفوفة التنبؤات الملكية." : "Acquire the official, unmodified Megapari client on your device to unlock predictions syncing.",
-    step1_btn: isArabic ? "تحميل تطبيق Megapari" : "DOWNLOAD CLIENT NOW",
+    step1_tag: isArabic ? "المصادقة" : "PASS 01",
+    step1_title: isArabic ? "شفرة التفعيل الخاصة" : "ROYAL PROMO KEY",
+    step1_desc: isArabic ? "قم بالتسجيل داخل التطبيق باستخدام الرمز الخاص DARK200 لتسجيل جهازك في مصفوفة كبار الشخصيات." : "Register a brand new account and input code DARK200 to link your client to the premium oracle.",
+    step1_copy: isArabic ? "نسخ رمز التفعيل الفريد" : "COPY ACTION KEY",
+    step1_copied: isArabic ? "تم النسخ بنجاح!" : "COPIED TO CLIPBOARD",
     
-    step2_tag: isArabic ? "المصادقة" : "PASS 02",
-    step2_title: isArabic ? "شفرة التفعيل الخاصة" : "ROYAL PROMO KEY",
-    step2_desc: isArabic ? "قم بالتسجيل داخل التطبيق باستخدام الرمز الخاص DARK200 لتسجيل جهازك في مصفوفة كبار الشخصيات." : "Register a brand new account and input code DARK200 to link your client to the premium oracle.",
-    step2_copy: isArabic ? "نسخ رمز التفعيل الفريد" : "COPY ACTION KEY",
-    step2_copied: isArabic ? "تم النسخ بنجاح!" : "COPIED TO CLIPBOARD",
+    step2_tag: isArabic ? "شريان الاتصال" : "LINK 02",
+    step2_title: isArabic ? "تحميل العميل الرسمي" : "OBTAIN ROYAL APP CLIENT",
+    step2_desc: isArabic ? "انقر أدناه للحصول على تطبيق Megapari الرسمي للبدء في ربط وتزامن مصفوفة التنبؤات الملكية." : "Acquire the official, unmodified Megapari client on your device to unlock predictions syncing.",
+    step2_btn: isArabic ? "تحميل تطبيق Megapari" : "DOWNLOAD CLIENT NOW",
     
     step3_tag: isArabic ? "الموازنة" : "LIMIT 03",
     step3_title: isArabic ? "شحن رصيد البوابة" : "VIP ACTIVATION LIMITS",
@@ -385,8 +385,8 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onComplete, lang, t, platfo
         </div>
         
         <div className="flex justify-between mt-2.5 text-[8.5px] font-mono font-black uppercase text-zinc-500 tracking-wider">
-          <span className={currentStep === 1 ? 'text-fuchsia-400' : ''}>{isArabic ? '1. التحميل' : '1. DOWNLOAD'}</span>
-          <span className={currentStep === 2 ? 'text-fuchsia-400' : ''}>{isArabic ? '2. الرمز' : '2. KEY'}</span>
+          <span className={currentStep === 1 ? 'text-fuchsia-400' : ''}>{isArabic ? '1. الرمز' : '1. KEY'}</span>
+          <span className={currentStep === 2 ? 'text-fuchsia-400' : ''}>{isArabic ? '2. التحميل' : '2. DOWNLOAD'}</span>
           <span className={currentStep === 3 ? 'text-fuchsia-400' : ''}>{isArabic ? '3. الإيداع' : '3. LIMIT'}</span>
           <span className={currentStep === 4 ? 'text-fuchsia-400' : ''}>{isArabic ? '4. التوثيق' : '4. SIGN'}</span>
         </div>
@@ -395,19 +395,20 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onComplete, lang, t, platfo
       {/* RE-IMAGINED: ASYMMETRICAL VIP STEPS & REQUIREMENT BOARD */}
       <div className="relative z-10 max-w-[325px] mx-auto w-full pb-8">
         
-        {/* STEP 1: DOWNLOAD CLIENT */}
+        {/* STEP 1: PROMO KEY */}
         {currentStep === 1 && (
-          <div className="relative rounded-[2.2rem] rounded-tr-[1rem] rounded-bl-[1rem] bg-gradient-to-b from-[#180e29]/70 to-[#06030a]/90 border border-fuchsia-500/30 backdrop-blur-xl p-7 shadow-[0_30px_70px_rgba(0,0,0,0.9),_0_0_50px_rgba(168,85,247,0.12)] transition-all duration-500 hover:border-fuchsia-400/60 overflow-hidden group animate-in fade-in slide-in-from-bottom-3 duration-300">
-            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-fuchsia-500/35" />
-            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-fuchsia-500/35" />
+          <div className="relative rounded-[2rem] bg-gradient-to-b from-[#180e29]/70 to-[#06030a]/90 border border-fuchsia-500/30 backdrop-blur-xl p-7 shadow-[0_30px_70px_rgba(0,0,0,0.9),_0_0_50px_rgba(168,85,247,0.12)] transition-all duration-500 hover:border-fuchsia-400/60 overflow-hidden group animate-in fade-in slide-in-from-bottom-3 duration-300">
+            {/* Custom ticket mock holes */}
+            <div className="absolute top-1/2 -left-3.5 w-7 h-7 bg-[#020104] rounded-full border border-fuchsia-500/15 pointer-events-none -translate-y-1/2 z-10" />
+            <div className="absolute top-1/2 -right-3.5 w-7 h-7 bg-[#020104] rounded-full border border-fuchsia-500/15 pointer-events-none -translate-y-1/2 z-10" />
             
             <div className="absolute top-0 right-0 p-4 opacity-[0.05] font-black font-display text-4xl text-white select-none pointer-events-none">
               01
             </div>
-            
+
             <div className="flex items-start gap-3 mb-2.5">
-              <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-fuchsia-500/20 p-[1.5px] bg-[#07030c] flex items-center justify-center">
-                 <img src={platformImg} alt={platformName} className="w-full h-full object-cover rounded-lg" referrerPolicy="no-referrer" />
+              <div className="w-10 h-10 rounded-xl bg-fuchsia-500/5 border border-fuchsia-500/20 flex items-center justify-center text-fuchsia-400 shrink-0">
+                 <Shield className="w-4 h-4 text-fuchsia-400" />
               </div>
               <div className="flex-1 min-w-0 text-left" dir="ltr">
                  <span className="text-[7px] font-mono text-fuchsia-400 uppercase font-black tracking-widest block mb-0.5">{stepTexts.step1_tag}</span>
@@ -421,16 +422,27 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onComplete, lang, t, platfo
               {stepTexts.step1_desc}
             </p>
 
-            <a 
-              href={megapariDownloadUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => audioManager.playClick()}
-              className="w-full h-11 rounded-xl bg-gradient-to-r from-fuchsia-500/20 via-purple-600/10 to-fuchsia-500/5 text-white font-black font-display text-[9px] tracking-[0.2em] uppercase flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(217,70,239,0.1)] hover:border-fuchsia-500/45 active:scale-[0.99] transition-all border border-fuchsia-500/30"
+            <div 
+              onClick={handleCopy}
+              className={`relative bg-black/40 rounded-xl border border-dashed p-3 flex items-center justify-between cursor-pointer transition-all duration-300 mb-4 text-left ${
+                copied ? 'border-fuchsia-500 bg-fuchsia-500/[0.02] shadow-[0_0_15px_rgba(217,70,239,0.15)]' : 'border-zinc-800 hover:border-fuchsia-500/40'
+              }`}
             >
-               <Download className="w-3.5 h-3.5 text-fuchsia-400" />
-               <span>{stepTexts.step1_btn}</span>
-            </a>
+               <div className="z-10 flex flex-col justify-center">
+                  <span className={`text-[7px] font-mono font-black tracking-wider uppercase mb-0.5 ${copied ? 'text-fuchsia-400 animate-pulse' : 'text-zinc-550'}`}>
+                    {copied ? stepTexts.step1_copied : stepTexts.step1_copy}
+                  </span>
+                  <span className="text-md font-mono font-black tracking-[0.25em] text-white">
+                    DARK200
+                  </span>
+               </div>
+
+               <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-500 ${
+                  copied ? 'bg-fuchsia-500 text-black scale-105 shadow-[0_0_10px_#d946ef]' : 'bg-[#020104] text-zinc-500 border border-white/5'
+                }`}>
+                  {copied ? <Check className="w-3.5 h-3.5 stroke-[3px] text-black" /> : <Copy className="w-3.5 h-3.5" />}
+               </div>
+            </div>
 
             {/* Next Button inside Step 1 */}
             <button
@@ -443,20 +455,19 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onComplete, lang, t, platfo
           </div>
         )}
 
-        {/* STEP 2: PROMO KEY */}
+        {/* STEP 2: DOWNLOAD CLIENT */}
         {currentStep === 2 && (
-          <div className="relative rounded-[2rem] bg-gradient-to-b from-[#180e29]/70 to-[#06030a]/90 border border-fuchsia-500/30 backdrop-blur-xl p-7 shadow-[0_30px_70px_rgba(0,0,0,0.9),_0_0_50px_rgba(168,85,247,0.12)] transition-all duration-500 hover:border-fuchsia-400/60 overflow-hidden group animate-in fade-in slide-in-from-bottom-3 duration-300">
-            {/* Custom ticket mock holes */}
-            <div className="absolute top-1/2 -left-3.5 w-7 h-7 bg-[#020104] rounded-full border border-fuchsia-500/15 pointer-events-none -translate-y-1/2 z-10" />
-            <div className="absolute top-1/2 -right-3.5 w-7 h-7 bg-[#020104] rounded-full border border-fuchsia-500/15 pointer-events-none -translate-y-1/2 z-10" />
+          <div className="relative rounded-[2.2rem] rounded-tr-[1rem] rounded-bl-[1rem] bg-gradient-to-b from-[#180e29]/70 to-[#06030a]/90 border border-fuchsia-500/30 backdrop-blur-xl p-7 shadow-[0_30px_70px_rgba(0,0,0,0.9),_0_0_50px_rgba(168,85,247,0.12)] transition-all duration-500 hover:border-fuchsia-400/60 overflow-hidden group animate-in fade-in slide-in-from-bottom-3 duration-300">
+            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-fuchsia-500/35" />
+            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-fuchsia-500/35" />
             
             <div className="absolute top-0 right-0 p-4 opacity-[0.05] font-black font-display text-4xl text-white select-none pointer-events-none">
               02
             </div>
-
+            
             <div className="flex items-start gap-3 mb-2.5">
-              <div className="w-10 h-10 rounded-xl bg-fuchsia-500/5 border border-fuchsia-500/20 flex items-center justify-center text-fuchsia-400 shrink-0">
-                 <Shield className="w-4 h-4 text-fuchsia-400" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-fuchsia-500/20 p-[1.5px] bg-[#07030c] flex items-center justify-center">
+                 <img src={platformImg} alt={platformName} className="w-full h-full object-cover rounded-lg" referrerPolicy="no-referrer" />
               </div>
               <div className="flex-1 min-w-0 text-left" dir="ltr">
                  <span className="text-[7px] font-mono text-fuchsia-400 uppercase font-black tracking-widest block mb-0.5">{stepTexts.step2_tag}</span>
@@ -470,27 +481,16 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onComplete, lang, t, platfo
               {stepTexts.step2_desc}
             </p>
 
-            <div 
-              onClick={handleCopy}
-              className={`relative bg-black/40 rounded-xl border border-dashed p-3 flex items-center justify-between cursor-pointer transition-all duration-300 mb-4 text-left ${
-                copied ? 'border-fuchsia-500 bg-fuchsia-500/[0.02] shadow-[0_0_15px_rgba(217,70,239,0.15)]' : 'border-zinc-800 hover:border-fuchsia-500/40'
-              }`}
+            <a 
+              href={megapariDownloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => audioManager.playClick()}
+              className="w-full h-11 rounded-xl bg-gradient-to-r from-fuchsia-500/20 via-purple-600/10 to-fuchsia-500/5 text-white font-black font-display text-[9px] tracking-[0.2em] uppercase flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(217,70,239,0.1)] hover:border-fuchsia-500/45 active:scale-[0.99] transition-all border border-fuchsia-500/30"
             >
-               <div className="z-10 flex flex-col justify-center">
-                  <span className={`text-[7px] font-mono font-black tracking-wider uppercase mb-0.5 ${copied ? 'text-fuchsia-400 animate-pulse' : 'text-zinc-550'}`}>
-                    {copied ? stepTexts.step2_copied : stepTexts.step2_copy}
-                  </span>
-                  <span className="text-md font-mono font-black tracking-[0.25em] text-white">
-                    DARK200
-                  </span>
-               </div>
-
-               <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-500 ${
-                  copied ? 'bg-fuchsia-500 text-black scale-105 shadow-[0_0_10px_#d946ef]' : 'bg-[#020104] text-zinc-500 border border-white/5'
-                }`}>
-                  {copied ? <Check className="w-3.5 h-3.5 stroke-[3px] text-black" /> : <Copy className="w-3.5 h-3.5" />}
-               </div>
-            </div>
+               <Download className="w-3.5 h-3.5 text-fuchsia-400" />
+               <span>{stepTexts.step2_btn}</span>
+            </a>
 
             {/* Back & Next Navigation Buttons */}
             <div className="grid grid-cols-2 gap-3 mt-4">
@@ -545,7 +545,7 @@ const SettingsView: React.FC<SettingsViewProps> = ({ onComplete, lang, t, platfo
               </div>
               <div className="bg-[#05020a]/80 border border-white/5 p-3 rounded-xl flex flex-col items-center justify-center hover:border-fuchsia-500/20 transition-all duration-300">
                    <span className="text-[7px] text-zinc-550 font-black uppercase tracking-wider mb-1 font-mono">{stepTexts.step3_local}</span>
-                   <span className="text-md font-black text-fuchsia-400 font-display">200 EGP</span>
+                   <span className="text-md font-black text-fuchsia-400 font-display">250 EGP</span>
               </div>
             </div>
 
